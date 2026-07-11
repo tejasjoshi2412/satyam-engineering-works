@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  // Footer year
+  // ── Footer year ──
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
@@ -205,5 +205,65 @@ document.addEventListener('DOMContentLoaded', function () {
       particlesContainer.appendChild(p);
     }
   }
+
+  // ── Form handler (Web3Forms) ──
+  var contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    var feedback = document.getElementById('formFeedback');
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var data = new FormData(contactForm);
+      data.append('access_key', 'YOUR_WEB3FORMS_ACCESS_KEY');
+
+      feedback.className = 'form-feedback loading';
+      feedback.innerHTML = '<div class="form-spinner"></div> Sending your enquiry...';
+      feedback.style.display = 'flex';
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      })
+      .then(function (res) { return res.json(); })
+      .then(function (json) {
+        if (json.success) {
+          feedback.className = 'form-feedback success';
+          feedback.innerHTML = 'Thanks, your enquiry was sent. We\'ll get back to you shortly.';
+          contactForm.reset();
+        } else {
+          feedback.className = 'form-feedback error';
+          feedback.innerHTML = 'Something went wrong. Please email us directly at <a href="mailto:abhijeetsingh5434@gmail.com">abhijeetsingh5434@gmail.com</a>.';
+        }
+      })
+      .catch(function () {
+        feedback.className = 'form-feedback error';
+        feedback.innerHTML = 'Network error. Please email us directly at <a href="mailto:abhijeetsingh5434@gmail.com">abhijeetsingh5434@gmail.com</a>.';
+      });
+    });
+  }
+
+  // ── Page transitions ──
+  var transEl = document.createElement('div');
+  transEl.className = 'page-transition';
+  document.body.appendChild(transEl);
+
+  document.querySelectorAll('a:not([target="_blank"]):not([href^="#"]):not([href^="tel:"]):not([href^="mailto:"]):not([href^="https://wa.me"]):not([href^="https://maps.google"]):not([href*="maps.google"])').forEach(function (link) {
+    var href = link.getAttribute('href');
+    if (!href || href === '' || href.startsWith('http') || href.startsWith('//')) return;
+
+    link.addEventListener('click', function (e) {
+      if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+      e.preventDefault();
+      transEl.classList.add('active');
+      var dest = href;
+      setTimeout(function () {
+        window.location.href = dest;
+      }, 400);
+    });
+  });
+
+  window.addEventListener('pageshow', function () {
+    transEl.classList.remove('active');
+  });
 
 });

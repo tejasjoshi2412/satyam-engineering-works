@@ -4,10 +4,49 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Satyam Engineering Works — Bhavnagar</title>
-<meta name="description" content="Contact Satyam Engineering Works — Plot no. 14/39, Chitra GIDC, Bhavnagar 364004.">
+<meta name="description" content="Contact Satyam Engineering Works — Plot no. 14/39, Chitra GIDC, Bhavnagar 364004. Call +91 70692 91206 or send project details for a quote.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://maps.googleapis.com">
 <link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Satyam Engineering Works",
+  "description": "Fire protection systems, investment casting finishing, and structural steel fabrication — based in Bhavnagar, serving industry across Gujarat.",
+  "url": "https://tejasjoshi2412.github.io/satyam-engineering-works/",
+  "telephone": "+91-70692-91206",
+  "email": "abhijeetsingh5434@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Plot no. 14/39, Chitra GIDC",
+    "addressLocality": "Bhavnagar",
+    "addressRegion": "Gujarat",
+    "postalCode": "364004",
+    "addressCountry": "IN"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  },
+  "taxID": "24BHJPS4431G1ZC",
+  "areaServed": "Gujarat",
+  "priceRange": "$$",
+  "image": "https://tejasjoshi2412.github.io/satyam-engineering-works/assets/og-image.jpg",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services",
+    "itemListElement": [
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Fire Protection Systems"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Investment Casting Finishing"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Structural Steel Fabrication"}}
+    ]
+  }
+}
+</script>
 </head>
 <body>
 
@@ -40,7 +79,7 @@
         <a href="structural-steel.html">Structural Steel</a>
         <a href="projects.html">Projects</a>
         <a href="machinery.html">Machinery</a>
-        <a href="contact.html" class="active">Contact</a>
+        <a href="contact.html" class="active" aria-current="page">Contact</a>
       </div>
       <a class="cta-btn" href="tel:+917069291206">Call Now</a>
       <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -78,24 +117,24 @@
     <div class="reveal reveal-delay-1">
       <div class="contact-card">
         <h3>Send Project Details</h3>
-        <form class="form-grid" action="mailto:abhijeetsingh5434@gmail.com" method="post" enctype="text/plain">
+        <form class="form-grid" id="contactForm">
           <div class="form-row">
-            <div class="form-field"><label for="name">Name</label><input type="text" id="name" name="Name" required></div>
-            <div class="form-field"><label for="phone">Phone</label><input type="tel" id="phone" name="Phone" required></div>
+            <div class="form-field"><label for="name">Name *</label><input type="text" id="name" name="name" required></div>
+            <div class="form-field"><label for="phone">Phone *</label><input type="tel" id="phone" name="phone" required></div>
           </div>
-          <div class="form-field"><label for="email">Email</label><input type="email" id="email" name="Email"></div>
+          <div class="form-field"><label for="email">Email</label><input type="email" id="email" name="email"></div>
           <div class="form-field">
             <label for="division">Division</label>
-            <select id="division" name="Division">
+            <select id="division" name="division">
               <option>Fire Protection Systems</option>
               <option>Investment Casting Finishing</option>
               <option>Structural Steel Fabrication</option>
               <option>Not Sure / General Enquiry</option>
             </select>
           </div>
-          <div class="form-field"><label for="message">Project Details</label><textarea id="message" name="Message" placeholder="Scope, location, and timeline..."></textarea></div>
+          <div class="form-field"><label for="message">Project Details</label><textarea id="message" name="message" placeholder="Scope, location, and timeline..."></textarea></div>
           <button type="submit" class="btn btn-primary" style="justify-content:center; margin-top:8px;">Send Enquiry</button>
-          <p class="form-note">This opens your email app with the details pre-filled — we don't have a live form backend on this static site yet.</p>
+          <div id="formFeedback" class="form-feedback"></div>
         </form>
       </div>
     </div>
@@ -121,7 +160,7 @@
           <svg class="location-icon" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="1" stroke="currentColor" stroke-width="1.8"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
           <div><b>GSTIN</b><span>24BHJPS4431G1ZC</span></div>
         </div>
-        <a class="btn btn-outline" style="align-self:flex-start;" href="https://maps.google.com?q=Satyam%20Engineering%20Works,%20Plot%20no.%2014/39,%20Chitra%20Gujarat%20Industrial%20Development%20Corporation,%20Bhavnagar,%20Gujarat%20364004&ftid=0x395f50fbdfe63435:0x1db530a7def6c578&entry=gps&shh=CAE" target="_blank" rel="noopener">Open in Google Maps</a>
+        <a class="btn btn-outline" style="align-self:flex-start;" href="https://maps.google.com?daddr=Plot+no+14/39+Chitra+GIDC+Bhavnagar+Gujarat+364004" target="_blank" rel="noopener">Get Directions</a>
       </div>
     </div>
   </div>
