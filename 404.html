@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Page Not Found | Satyam Engineering Works</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .err{ text-align:center; padding:200px 0 140px; min-height:80vh; display:flex; align-items:center; justify-content:center; }
+  .err svg{ width:72px; height:72px; margin-bottom:24px; }
+  .err h1{ font-size:clamp(6rem,14vw,10rem); line-height:1; margin-bottom:0; color:var(--plate-raised); position:relative; }
+  .err h1 span{ color:var(--paper); }
+  .err h1 .code{ display:block; font-size:clamp(3rem,5vw,5rem); color:var(--mute); font-family:var(--f-mono); margin-top:-20px; }
+  .err p{ color:var(--mute); font-size:1rem; max-width:40ch; margin:16px auto 32px; }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header>
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 44 44" fill="none">
+        <path class="mark-hex" d="M22 2 L38 11 V33 L22 42 L6 33 V11 Z" stroke="#5FA0C4" stroke-width="1.6"/>
+        <path class="mark-beam" d="M14 14 H30 M22 14 V30 M14 30 H30" stroke="#EEEFEC" stroke-width="2.4" stroke-linecap="square"/>
+        <path class="mark-flame" d="M22 22.5 C20 25.5 19 27 19 28.8 C19 30.3 20.3 31.5 22 31.5 C23.7 31.5 25 30.3 25 28.8 C25 27 24 25.5 22 22.5 Z" fill="#D6472C"/>
+      </svg>
+      <div class="brand-text">Satyam Engineering Works<span>Fire · Casting · Structural</span></div>
+    </a>
+    <nav>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="fire-protection.html">Fire Protection</a>
+        <a href="casting-finishing.html">Casting Finishing</a>
+        <a href="structural-steel.html">Structural Steel</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a class="cta-btn" href="contact.html">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="err">
+  <div>
+    <svg viewBox="0 0 44 44" fill="none">
+      <path d="M22 2 L38 11 V33 L22 42 L6 33 V11 Z" stroke="#5FA0C4" stroke-width="1.2" stroke-dasharray="3 3"/>
+      <path d="M14 14 H30 M22 14 V30 M14 30 H30" stroke="#EEEFEC" stroke-width="2" stroke-linecap="square" opacity="0.3"/>
+    </svg>
+    <h1><span>404</span><span class="code">PAGE NOT FOUND</span></h1>
+    <p>The page you're looking for doesn't exist, or has been moved.</p>
+    <a class="btn btn-primary" href="index.html">Back to Home</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand"><svg class="brand-mark" viewBox="0 0 44 44" fill="none"><path d="M22 2 L38 11 V33 L22 42 L6 33 V11 Z" stroke="#5FA0C4" stroke-width="1.6"/><path d="M14 14 H30 M22 14 V30 M14 30 H30" stroke="#EEEFEC" stroke-width="2.4" stroke-linecap="square"/><path d="M22 22.5 C20 25.5 19 27 19 28.8 C19 30.3 20.3 31.5 22 31.5 C23.7 31.5 25 30.3 25 28.8 C25 27 24 25.5 22 22.5 Z" fill="#D6472C"/></svg><span>Satyam Engineering Works</span></div>
+        <p>Fire protection, investment casting finishing, and structural steel fabrication — based in Bhavnagar, serving industry across Gujarat.</p>
+      </div>
+      <div class="footer-col"><h4>Divisions</h4><ul><li><a href="fire-protection.html">Fire Protection</a></li><li><a href="casting-finishing.html">Casting Finishing</a></li><li><a href="structural-steel.html">Structural Steel</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+917069291206">+91 70692 91206</a></li><li><a href="mailto:abhijeetsingh5434@gmail.com">abhijeetsingh5434@gmail.com</a></li><li><span style="color:var(--faint); font-size:0.86rem;">Plot 14/39, Chitra GIDC, Bhavnagar</span></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© <span id="year"></span> Satyam Engineering Works · GSTIN 24BHJPS4431G1ZC</p><p>Bhavnagar, Gujarat</p></div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
