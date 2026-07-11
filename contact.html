@@ -117,24 +117,25 @@
     <div class="reveal reveal-delay-1">
       <div class="contact-card">
         <h3>Send Project Details</h3>
-        <form class="form-grid" id="contactForm">
+        <form class="form-grid" action="https://formsubmit.co/abhijeetsingh5434@gmail.com" method="POST">
+          <input type="hidden" name="_next" value="https://tejasjoshi2412.github.io/satyam-engineering-works/contact.html?sent=1">
+          <input type="text" name="_honey" style="display:none">
           <div class="form-row">
-            <div class="form-field"><label for="name">Name *</label><input type="text" id="name" name="name" required></div>
-            <div class="form-field"><label for="phone">Phone *</label><input type="tel" id="phone" name="phone" required></div>
+            <div class="form-field"><label for="name">Name *</label><input type="text" id="name" name="Name" required></div>
+            <div class="form-field"><label for="phone">Phone *</label><input type="tel" id="phone" name="Phone" required></div>
           </div>
-          <div class="form-field"><label for="email">Email</label><input type="email" id="email" name="email"></div>
+          <div class="form-field"><label for="email">Email</label><input type="email" id="email" name="Email"></div>
           <div class="form-field">
             <label for="division">Division</label>
-            <select id="division" name="division">
+            <select id="division" name="Division">
               <option>Fire Protection Systems</option>
               <option>Investment Casting Finishing</option>
               <option>Structural Steel Fabrication</option>
               <option>Not Sure / General Enquiry</option>
             </select>
           </div>
-          <div class="form-field"><label for="message">Project Details</label><textarea id="message" name="message" placeholder="Scope, location, and timeline..."></textarea></div>
+          <div class="form-field"><label for="message">Project Details</label><textarea id="message" name="Message" placeholder="Scope, location, and timeline..."></textarea></div>
           <button type="submit" class="btn btn-primary" style="justify-content:center; margin-top:8px;">Send Enquiry</button>
-          <div id="formFeedback" class="form-feedback"></div>
         </form>
       </div>
     </div>

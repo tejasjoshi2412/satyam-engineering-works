@@ -206,40 +206,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // ── Form handler (Web3Forms) ──
-  var contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    var feedback = document.getElementById('formFeedback');
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      var data = new FormData(contactForm);
-      data.append('access_key', 'YOUR_WEB3FORMS_ACCESS_KEY');
-
-      feedback.className = 'form-feedback loading';
-      feedback.innerHTML = '<div class="form-spinner"></div> Sending your enquiry...';
-      feedback.style.display = 'flex';
-
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: data
-      })
-      .then(function (res) { return res.json(); })
-      .then(function (json) {
-        if (json.success) {
-          feedback.className = 'form-feedback success';
-          feedback.innerHTML = 'Thanks, your enquiry was sent. We\'ll get back to you shortly.';
-          contactForm.reset();
-        } else {
-          feedback.className = 'form-feedback error';
-          feedback.innerHTML = 'Something went wrong. Please email us directly at <a href="mailto:abhijeetsingh5434@gmail.com">abhijeetsingh5434@gmail.com</a>.';
-        }
-      })
-      .catch(function () {
-        feedback.className = 'form-feedback error';
-        feedback.innerHTML = 'Network error. Please email us directly at <a href="mailto:abhijeetsingh5434@gmail.com">abhijeetsingh5434@gmail.com</a>.';
-      });
-    });
+  // ── FormSubmit success banner ──
+  if (window.location.search.indexOf('sent=1') !== -1) {
+    var banner = document.createElement('div');
+    banner.style.cssText = 'max-width:var(--container);margin:0 auto 0;padding:20px 32px;background:rgba(37,211,102,0.1);border:1px solid #25D366;border-radius:2px;text-align:center;font-family:var(--f-mono);font-size:0.85rem;color:#25D366;';
+    banner.textContent = 'Thanks for your enquiry! We\'ll get back to you shortly.';
+    var header = document.querySelector('.page-header .wrap');
+    if (header) header.appendChild(banner);
   }
 
   // ── Page transitions ──
